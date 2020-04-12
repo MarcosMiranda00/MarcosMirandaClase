@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ejercicioClase.Model;
+using ejercicioClase.Vista;
+
 namespace ejercicioClase.Vista
 {
     public partial class frmUsuarios : Form
@@ -39,6 +41,7 @@ namespace ejercicioClase.Vista
             txtUsuario.Text = "";
             txtContrasena.Text = "";
         }
+
         private void btnCargar_Click(object sender, EventArgs e)
         {
             cargardatos();
@@ -62,7 +65,6 @@ namespace ejercicioClase.Vista
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
             using (sistema_ventasEntities db = new sistema_ventasEntities())
             {
                 String Id = dtvUsuarios.CurrentRow.Cells[0].Value.ToString();
@@ -73,10 +75,9 @@ namespace ejercicioClase.Vista
             }
             cargardatos();
             limpiardatos();
-
         }
 
-        private void dtvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dtvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             String Email = dtvUsuarios.CurrentRow.Cells[1].Value.ToString();
             String Contra = dtvUsuarios.CurrentRow.Cells[2].Value.ToString();
@@ -102,7 +103,7 @@ namespace ejercicioClase.Vista
             limpiardatos();
         }
 
-        private void Usuarios_Load(object sender, EventArgs e)
+        private void frmUsuarios_Load(object sender, EventArgs e)
         {
             cargardatos();
         }

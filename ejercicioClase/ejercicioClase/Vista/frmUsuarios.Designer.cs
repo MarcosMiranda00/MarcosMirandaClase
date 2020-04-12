@@ -43,68 +43,71 @@
             // lblContrasena
             // 
             this.lblContrasena.AutoSize = true;
-            this.lblContrasena.Location = new System.Drawing.Point(326, 9);
+            this.lblContrasena.Location = new System.Drawing.Point(302, 23);
             this.lblContrasena.Name = "lblContrasena";
             this.lblContrasena.Size = new System.Drawing.Size(61, 13);
-            this.lblContrasena.TabIndex = 18;
+            this.lblContrasena.TabIndex = 27;
             this.lblContrasena.Text = "Contraseña";
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(36, 9);
+            this.lblUsuario.Location = new System.Drawing.Point(12, 23);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(43, 13);
-            this.lblUsuario.TabIndex = 17;
+            this.lblUsuario.TabIndex = 26;
             this.lblUsuario.Text = "Usuario";
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(312, 95);
+            this.btnEditar.Location = new System.Drawing.Point(288, 109);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
-            this.btnEditar.TabIndex = 16;
+            this.btnEditar.TabIndex = 25;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(224, 95);
+            this.btnEliminar.Location = new System.Drawing.Point(200, 109);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 15;
+            this.btnEliminar.TabIndex = 24;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(130, 95);
+            this.btnGuardar.Location = new System.Drawing.Point(106, 109);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 14;
+            this.btnGuardar.TabIndex = 23;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txtContrasena
             // 
-            this.txtContrasena.Location = new System.Drawing.Point(326, 37);
+            this.txtContrasena.Location = new System.Drawing.Point(302, 51);
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.Size = new System.Drawing.Size(249, 20);
-            this.txtContrasena.TabIndex = 13;
+            this.txtContrasena.TabIndex = 22;
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(36, 37);
+            this.txtUsuario.Location = new System.Drawing.Point(12, 51);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(249, 20);
-            this.txtUsuario.TabIndex = 12;
+            this.txtUsuario.TabIndex = 21;
             // 
             // btnCargar
             // 
-            this.btnCargar.Location = new System.Drawing.Point(36, 95);
+            this.btnCargar.Location = new System.Drawing.Point(12, 109);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(75, 23);
-            this.btnCargar.TabIndex = 11;
+            this.btnCargar.TabIndex = 20;
             this.btnCargar.Text = "Cargar";
             this.btnCargar.UseVisualStyleBackColor = true;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
@@ -113,16 +116,17 @@
             // 
             this.dtvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtvUsuarios.Location = new System.Drawing.Point(36, 154);
+            this.dtvUsuarios.Location = new System.Drawing.Point(12, 168);
             this.dtvUsuarios.Name = "dtvUsuarios";
             this.dtvUsuarios.Size = new System.Drawing.Size(727, 310);
-            this.dtvUsuarios.TabIndex = 10;
+            this.dtvUsuarios.TabIndex = 19;
+            this.dtvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvUsuarios_CellContentClick);
             // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 513);
+            this.ClientSize = new System.Drawing.Size(800, 515);
             this.Controls.Add(this.lblContrasena);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.btnEditar);
@@ -134,6 +138,7 @@
             this.Controls.Add(this.dtvUsuarios);
             this.Name = "frmUsuarios";
             this.Text = "frmUsuarios";
+            this.Load += new System.EventHandler(this.frmUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtvUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

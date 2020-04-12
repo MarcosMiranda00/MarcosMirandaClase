@@ -34,6 +34,7 @@
             // 
             // dtVistaRoles
             // 
+            this.dtVistaRoles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtVistaRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtVistaRoles.Location = new System.Drawing.Point(53, 56);
             this.dtVistaRoles.Name = "dtVistaRoles";
