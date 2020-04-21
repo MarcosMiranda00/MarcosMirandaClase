@@ -24,15 +24,15 @@ namespace ejercicioClase.Vista
         {
             using (sistema_ventasEntities db = new sistema_ventasEntities())
             {
-                //var tb_usuarios = db.tb_usuarios;
-                //foreach(var iterardatosTBUsuarios in tb_usuarios)
-                //{
-                //dtvUsuarios.Rows.Add(iterardatosTBUsuarios.Email, iterardatosTBUsuarios.Contrasena);
-                //}
+                var tb_usuarios = db.tb_usuarios;
+                foreach (var iterardatosTBUsuarios in tb_usuarios)
+                {
+                    dtvUsuarios.Rows.Add(iterardatosTBUsuarios.Email, iterardatosTBUsuarios.Contrasena);
+                }
 
 
 
-                dtvUsuarios.DataSource = db.tb_usuarios.ToList();
+                //dtvUsuarios.DataSource = db.tb_usuarios.ToList();
             }
         }
 

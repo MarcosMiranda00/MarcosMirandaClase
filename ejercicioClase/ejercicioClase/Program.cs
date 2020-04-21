@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ejercicioClase.Vista.formulariosdebusqueda;
 
 namespace ejercicioClase
 {
@@ -16,7 +17,7 @@ namespace ejercicioClase
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Logueo());
+            Application.Run(new frmBusqueda());
         }
     }
 }
