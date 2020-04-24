@@ -33,23 +33,27 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.lblContrasena = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnIngresar
             // 
+            this.btnIngresar.BackColor = System.Drawing.Color.LightGray;
             this.btnIngresar.Font = new System.Drawing.Font("Algerian", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresar.Location = new System.Drawing.Point(31, 246);
+            this.btnIngresar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnIngresar.Location = new System.Drawing.Point(32, 264);
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(4);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(107, 42);
             this.btnIngresar.TabIndex = 14;
             this.btnIngresar.Text = "Ingresar";
-            this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // txtContrasena
             // 
-            this.txtContrasena.Location = new System.Drawing.Point(28, 169);
+            this.txtContrasena.BackColor = System.Drawing.Color.Silver;
+            this.txtContrasena.Location = new System.Drawing.Point(33, 219);
             this.txtContrasena.Margin = new System.Windows.Forms.Padding(4);
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.PasswordChar = '*';
@@ -58,7 +62,8 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(28, 64);
+            this.txtUsuario.BackColor = System.Drawing.Color.Silver;
+            this.txtUsuario.Location = new System.Drawing.Point(33, 114);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(372, 20);
@@ -68,7 +73,7 @@
             // 
             this.lblContrasena.AutoSize = true;
             this.lblContrasena.Font = new System.Drawing.Font("Algerian", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContrasena.Location = new System.Drawing.Point(28, 134);
+            this.lblContrasena.Location = new System.Drawing.Point(33, 184);
             this.lblContrasena.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblContrasena.Name = "lblContrasena";
             this.lblContrasena.Size = new System.Drawing.Size(100, 15);
@@ -79,18 +84,30 @@
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Algerian", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(24, 27);
+            this.lblUsuario.Location = new System.Drawing.Point(29, 77);
             this.lblUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(67, 15);
             this.lblUsuario.TabIndex = 10;
             this.lblUsuario.Text = "Usuario";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Algerian", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(175, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 24);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "LOGUIN";
+            // 
             // Logueo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(489, 385);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.txtContrasena);
             this.Controls.Add(this.txtUsuario);
@@ -110,6 +127,7 @@
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label lblContrasena;
         private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Label label1;
     }
 }
 

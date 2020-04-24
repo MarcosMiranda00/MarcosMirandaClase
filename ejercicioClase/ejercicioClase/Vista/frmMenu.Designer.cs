@@ -39,6 +39,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cONTROLToolStripMenuItem,
             this.ventasToolStripMenuItem});
@@ -53,22 +54,24 @@
             this.cONTROLToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.uSUARIOSToolStripMenuItem,
             this.rOLESToolStripMenuItem});
+            this.cONTROLToolStripMenuItem.Font = new System.Drawing.Font("Algerian", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cONTROLToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.cONTROLToolStripMenuItem.Name = "cONTROLToolStripMenuItem";
-            this.cONTROLToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
+            this.cONTROLToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.cONTROLToolStripMenuItem.Text = "CONTROL";
             this.cONTROLToolStripMenuItem.Click += new System.EventHandler(this.cONTROLToolStripMenuItem_Click);
             // 
             // uSUARIOSToolStripMenuItem
             // 
             this.uSUARIOSToolStripMenuItem.Name = "uSUARIOSToolStripMenuItem";
-            this.uSUARIOSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.uSUARIOSToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.uSUARIOSToolStripMenuItem.Text = "USUARIOS";
             this.uSUARIOSToolStripMenuItem.Click += new System.EventHandler(this.uSUARIOSToolStripMenuItem_Click);
             // 
             // rOLESToolStripMenuItem
             // 
             this.rOLESToolStripMenuItem.Name = "rOLESToolStripMenuItem";
-            this.rOLESToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.rOLESToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.rOLESToolStripMenuItem.Text = "ROLES";
             this.rOLESToolStripMenuItem.Click += new System.EventHandler(this.rOLESToolStripMenuItem_Click);
             // 
@@ -76,21 +79,23 @@
             // 
             this.ventasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.venderToolStripMenuItem});
+            this.ventasToolStripMenuItem.Font = new System.Drawing.Font("Algerian", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.ventasToolStripMenuItem.Text = "Ventas";
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.ventasToolStripMenuItem.Text = "VENTAS";
             // 
             // venderToolStripMenuItem
             // 
             this.venderToolStripMenuItem.Name = "venderToolStripMenuItem";
-            this.venderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.venderToolStripMenuItem.Text = "Vender";
+            this.venderToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.venderToolStripMenuItem.Text = "VENDER";
             this.venderToolStripMenuItem.Click += new System.EventHandler(this.venderToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;

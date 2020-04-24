@@ -36,9 +36,9 @@ namespace ejercicioClase.Vista
 
         }
 
+        public static frmVentas v1 = new frmVentas();
         private void venderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmVentas v1 = new frmVentas();
             v1.MdiParent = this;
             v1.Show();
         }

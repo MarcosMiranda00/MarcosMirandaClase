@@ -31,15 +31,18 @@ namespace ejercicioClase
                 if (lista.Count() > 0)
                 {
                     frmMenu menu = new frmMenu();
-                    menu.Show();
+                    menu.Show();                    
                 }
                 else
                 {
                     MessageBox.Show("El usuario es incorrecto");
                 }
 
+                
+
 
             }
+           
         }
     }
 }

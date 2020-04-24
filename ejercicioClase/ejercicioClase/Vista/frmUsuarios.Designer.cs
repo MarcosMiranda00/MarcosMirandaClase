@@ -43,23 +43,26 @@
             // lblContrasena
             // 
             this.lblContrasena.AutoSize = true;
+            this.lblContrasena.Font = new System.Drawing.Font("Algerian", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContrasena.Location = new System.Drawing.Point(302, 23);
             this.lblContrasena.Name = "lblContrasena";
-            this.lblContrasena.Size = new System.Drawing.Size(61, 13);
+            this.lblContrasena.Size = new System.Drawing.Size(90, 15);
             this.lblContrasena.TabIndex = 27;
             this.lblContrasena.Text = "Contraseña";
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Algerian", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.Location = new System.Drawing.Point(12, 23);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(43, 13);
+            this.lblUsuario.Size = new System.Drawing.Size(60, 15);
             this.lblUsuario.TabIndex = 26;
             this.lblUsuario.Text = "Usuario";
             // 
             // btnEditar
             // 
+            this.btnEditar.Font = new System.Drawing.Font("Algerian", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Location = new System.Drawing.Point(288, 109);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
@@ -70,6 +73,7 @@
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Font = new System.Drawing.Font("Algerian", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.Location = new System.Drawing.Point(200, 109);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
@@ -80,6 +84,7 @@
             // 
             // btnGuardar
             // 
+            this.btnGuardar.Font = new System.Drawing.Font("Algerian", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Location = new System.Drawing.Point(106, 109);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
@@ -90,6 +95,7 @@
             // 
             // txtContrasena
             // 
+            this.txtContrasena.BackColor = System.Drawing.Color.Silver;
             this.txtContrasena.Location = new System.Drawing.Point(302, 51);
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.Size = new System.Drawing.Size(249, 20);
@@ -97,6 +103,7 @@
             // 
             // txtUsuario
             // 
+            this.txtUsuario.BackColor = System.Drawing.Color.Silver;
             this.txtUsuario.Location = new System.Drawing.Point(12, 51);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(249, 20);
@@ -104,6 +111,7 @@
             // 
             // btnCargar
             // 
+            this.btnCargar.Font = new System.Drawing.Font("Algerian", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCargar.Location = new System.Drawing.Point(12, 109);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(75, 23);
@@ -114,10 +122,14 @@
             // 
             // dtvUsuarios
             // 
+            this.dtvUsuarios.AllowUserToAddRows = false;
+            this.dtvUsuarios.AllowUserToDeleteRows = false;
             this.dtvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtvUsuarios.BackgroundColor = System.Drawing.Color.Silver;
             this.dtvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtvUsuarios.Location = new System.Drawing.Point(12, 168);
             this.dtvUsuarios.Name = "dtvUsuarios";
+            this.dtvUsuarios.ReadOnly = true;
             this.dtvUsuarios.Size = new System.Drawing.Size(727, 310);
             this.dtvUsuarios.TabIndex = 19;
             this.dtvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvUsuarios_CellContentClick);
@@ -126,6 +138,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 515);
             this.Controls.Add(this.lblContrasena);
             this.Controls.Add(this.lblUsuario);

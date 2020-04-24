@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ejercicioClase.Vista;
+using ejercicioClase.Vista.formulariosdebusqueda;
 using ejercicioClase.Model;
 
 namespace ejercicioClase.Vista
@@ -55,6 +56,51 @@ namespace ejercicioClase.Vista
                 
             }
 
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            frmBusqueda busqueda = new frmBusqueda();
+            busqueda.Show();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                calculo();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            dtgVentas.Rows.Add(txtCodigoProd.Text,txtNombredelProd.Text,txtPrecioProd.Text,txtCantidad.Text,txtTotal.Text);
+        }
+
+        private void txtCantidad_TextChanged(object sender, EventArgs e)
+        {
+            calculo();
+        }
+
+        void calculo()
+        {
+            try
+            {
+                double precioProd;
+                double cantidad;
+                double total;
+
+                precioProd = double.Parse(txtPrecioProd.Text);
+                cantidad = Convert.ToDouble(txtCantidad.Text);
+
+                total = precioProd * cantidad;
+                txtTotal.Text = total.ToString();
+            }
+            catch (Exception ex)
+            {
+                txtCantidad.Text = "0";
+                MessageBox.Show("No puedes operar datos menores a 0");
+            }
         }
     }
 }
