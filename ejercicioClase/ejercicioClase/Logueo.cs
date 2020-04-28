@@ -31,7 +31,8 @@ namespace ejercicioClase
                 if (lista.Count() > 0)
                 {
                     frmMenu menu = new frmMenu();
-                    menu.Show();                    
+                    menu.Show();
+                    this.Hide();
                 }
                 else
                 {

@@ -49,13 +49,15 @@
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.dtgVentas = new System.Windows.Forms.DataGridView();
-            this.lblTotal2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.CodigoProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblTotal2 = new System.Windows.Forms.Label();
+            this.txtTotal2 = new System.Windows.Forms.TextBox();
+            this.btnGVenta = new System.Windows.Forms.Button();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dtgVentas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -270,27 +272,6 @@
             this.dtgVentas.Size = new System.Drawing.Size(887, 242);
             this.dtgVentas.TabIndex = 20;
             // 
-            // lblTotal2
-            // 
-            this.lblTotal2.AutoSize = true;
-            this.lblTotal2.Font = new System.Drawing.Font("Algerian", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal2.Location = new System.Drawing.Point(32, 584);
-            this.lblTotal2.Name = "lblTotal2";
-            this.lblTotal2.Size = new System.Drawing.Size(159, 35);
-            this.lblTotal2.TabIndex = 21;
-            this.lblTotal2.Text = "Total $:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.Silver;
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(192, 562);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(196, 57);
-            this.textBox1.TabIndex = 22;
-            // 
             // CodigoProd
             // 
             this.CodigoProd.HeaderText = "Id del Producto";
@@ -321,6 +302,46 @@
             this.Total.Name = "Total";
             this.Total.ReadOnly = true;
             // 
+            // lblTotal2
+            // 
+            this.lblTotal2.AutoSize = true;
+            this.lblTotal2.Font = new System.Drawing.Font("Algerian", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal2.Location = new System.Drawing.Point(32, 584);
+            this.lblTotal2.Name = "lblTotal2";
+            this.lblTotal2.Size = new System.Drawing.Size(159, 35);
+            this.lblTotal2.TabIndex = 21;
+            this.lblTotal2.Text = "Total $:";
+            // 
+            // txtTotal2
+            // 
+            this.txtTotal2.BackColor = System.Drawing.Color.Silver;
+            this.txtTotal2.Enabled = false;
+            this.txtTotal2.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal2.Location = new System.Drawing.Point(192, 562);
+            this.txtTotal2.Multiline = true;
+            this.txtTotal2.Name = "txtTotal2";
+            this.txtTotal2.Size = new System.Drawing.Size(196, 57);
+            this.txtTotal2.TabIndex = 22;
+            // 
+            // btnGVenta
+            // 
+            this.btnGVenta.Font = new System.Drawing.Font("Algerian", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGVenta.Location = new System.Drawing.Point(807, 562);
+            this.btnGVenta.Name = "btnGVenta";
+            this.btnGVenta.Size = new System.Drawing.Size(128, 57);
+            this.btnGVenta.TabIndex = 23;
+            this.btnGVenta.Text = "GUARDAR VENTA";
+            this.btnGVenta.UseVisualStyleBackColor = true;
+            this.btnGVenta.Click += new System.EventHandler(this.btnGVenta_Click);
+            // 
+            // dtpFecha
+            // 
+            this.dtpFecha.CustomFormat = "yyyy-MM-dd";
+            this.dtpFecha.Location = new System.Drawing.Point(722, 32);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(200, 20);
+            this.dtpFecha.TabIndex = 24;
+            // 
             // frmVentas
             // 
             this.AcceptButton = this.btnAgregar;
@@ -328,7 +349,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(980, 655);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dtpFecha);
+            this.Controls.Add(this.btnGVenta);
+            this.Controls.Add(this.txtTotal2);
             this.Controls.Add(this.lblTotal2);
             this.Controls.Add(this.dtgVentas);
             this.Controls.Add(this.txtTotal);
@@ -383,12 +406,14 @@
         public System.Windows.Forms.TextBox txtNombredelProd;
         public System.Windows.Forms.TextBox txtPrecioProd;
         private System.Windows.Forms.Label lblTotal2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTotal2;
         public System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodigoProd;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreProd;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioProd;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.Button btnGVenta;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
     }
 }

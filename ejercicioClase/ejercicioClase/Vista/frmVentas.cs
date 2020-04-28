@@ -31,10 +31,12 @@ namespace ejercicioClase.Vista
             using (sistema_ventasEntities db = new sistema_ventasEntities())
             {
                 var tb_v = db.tb_venta;
+                txtNumerodeVenta.Text = "1";
                 foreach (var iterardatostbventa in tb_v) 
                 {
-                    txtNumerodeVenta.Text = iterardatostbventa.idVenta.ToString();
-                    //dtvUsuarios.Rows.Add(iterardatosTBUsuarios.Email, iterardatosTBUsuarios.Contrasena);
+                    int idVenta = iterardatostbventa.idVenta;
+                    int suma = idVenta + 1;
+                    txtNumerodeVenta.Text = suma.ToString();
                 }
             }
         }
@@ -75,6 +77,19 @@ namespace ejercicioClase.Vista
 
             }
             dtgVentas.Rows.Add(txtCodigoProd.Text,txtNombredelProd.Text,txtPrecioProd.Text,txtCantidad.Text,txtTotal.Text);
+
+                double suma = 0;
+            for (int i=0; i< dtgVentas.RowCount; i++)
+            {
+                string datosOperar = dtgVentas.Rows[i].Cells[4].Value.ToString();
+                double datosConvertidos = Convert.ToDouble(datosOperar);
+                
+                //suma = suma + datosConvertidos;
+                suma += datosConvertidos;
+
+                txtTotal2.Text = suma.ToString();
+
+            }
         }
 
         private void txtCantidad_TextChanged(object sender, EventArgs e)
@@ -100,6 +115,52 @@ namespace ejercicioClase.Vista
             {
                 txtCantidad.Text = "0";
                 MessageBox.Show("No puedes operar datos menores a 0");
+            }
+        }
+
+        private void btnGVenta_Click(object sender, EventArgs e)
+        {
+            using (sistema_ventasEntities bd = new sistema_ventasEntities())
+            {
+                tb_venta tb_v = new tb_venta();
+                string comboTipoDoc = cmbTipoDoc.SelectedValue.ToString();
+                string comboCliente = cmbCliente.SelectedValue.ToString();
+                tb_v.idDocumento = Convert.ToInt32(comboTipoDoc);
+                tb_v.iDCliente = Convert.ToInt32(comboCliente);
+                tb_v.iDUsuario = 1;
+                tb_v.totalVenta = Convert.ToDecimal(txtTotal2.Text);
+                tb_v.fecha = Convert.ToDateTime(dtpFecha.Text);
+
+                bd.tb_venta.Add(tb_v);
+                bd.SaveChanges();
+
+                detalleVenta dete = new detalleVenta();
+
+                for (int i = 0; i < dtgVentas.RowCount; i++)
+                {
+                    string idProducto = dtgVentas.Rows[i].Cells[0].Value.ToString();
+                    int idProductoConvertidos = Convert.ToInt32(idProducto);
+
+                    string cantidad = dtgVentas.Rows[i].Cells[3].Value.ToString();
+                    int cantidadConvertidos = Convert.ToInt32(cantidad);
+
+                    string precio = dtgVentas.Rows[i].Cells[2].Value.ToString();
+                    decimal precioConvertidos = Convert.ToDecimal(precio);
+
+                    string total = dtgVentas.Rows[i].Cells[4].Value.ToString();
+                    decimal totalConvertidos = Convert.ToDecimal(total);
+
+                    dete.idVenta = Convert.ToInt32(txtNumerodeVenta.Text);
+                    dete.idProducto = idProductoConvertidos;
+                    dete.cantidad = cantidadConvertidos;
+                    dete.precio = precioConvertidos;
+                    dete.total = totalConvertidos;
+                    bd.detalleVenta.Add(dete);
+                    bd.SaveChanges();
+
+                }
+
+
             }
         }
     }
