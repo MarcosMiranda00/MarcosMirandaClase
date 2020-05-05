@@ -113,8 +113,9 @@ namespace ejercicioClase.Vista
             }
             catch (Exception ex)
             {
-                txtCantidad.Text = "0";
-                MessageBox.Show("No puedes operar datos menores a 0");
+                txtCantidad.Text = "1";
+
+                txtCantidad.Select();
             }
         }
 
@@ -162,6 +163,52 @@ namespace ejercicioClase.Vista
 
 
             }
+                    retornoid();
+        }
+
+        private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtBuscar.Text =="") 
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    btnBuscar.PerformClick();
+                }
+            }else if (e.KeyCode == Keys.Enter)
+            {
+                using (sistema_ventasEntities bd = new sistema_ventasEntities()) 
+                {
+                    producto pr = new producto();
+                    int buscar = int.Parse(txtBuscar.Text);
+                    pr = bd.producto.Where(idBuscar => idBuscar.idProducto == buscar).First();
+                    txtCodigoProd.Text = Convert.ToString(pr.idProducto);
+                    txtNombredelProd.Text = Convert.ToString(pr.nombreProducto);
+                    txtPrecioProd.Text = Convert.ToString(pr.precioProducto);
+                    txtCantidad.Focus();
+                    txtBuscar.Text = "";
+                }
+            }
+        }
+
+        int intentos = 1;
+        private void txtCantidad_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (intentos == 2) 
+                {
+                    btnAgregar.PerformClick();
+                    txtCodigoProd.Text = "";
+                    txtNombredelProd.Text = "";
+                    txtPrecioProd.Text = "";
+                    txtTotal.Text = "";
+                    intentos = 0;
+                    txtCantidad.Text = "1";
+                    txtBuscar.Focus();
+                }
+                    intentos += 1;
+            }
+                    
         }
     }
 }
