@@ -163,7 +163,9 @@ namespace ejercicioClase.Vista
 
 
             }
-                    retornoid();
+            retornoid();
+            dtgVentas.Rows.Clear();
+            txtTotal2.Text = "";
         }
 
         private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
@@ -186,6 +188,7 @@ namespace ejercicioClase.Vista
                     txtPrecioProd.Text = Convert.ToString(pr.precioProducto);
                     txtCantidad.Focus();
                     txtBuscar.Text = "";
+                    intentos = 2;
                 }
             }
         }
@@ -210,5 +213,12 @@ namespace ejercicioClase.Vista
             }
                     
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+       
     }
 }
