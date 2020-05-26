@@ -77,19 +77,14 @@ namespace ejercicioClase.Vista
 
             }
             dtgVentas.Rows.Add(txtCodigoProd.Text,txtNombredelProd.Text,txtPrecioProd.Text,txtCantidad.Text,txtTotal.Text);
+            calculartotalfinal();
 
-                double suma = 0;
-            for (int i=0; i< dtgVentas.RowCount; i++)
-            {
-                string datosOperar = dtgVentas.Rows[i].Cells[4].Value.ToString();
-                double datosConvertidos = Convert.ToDouble(datosOperar);
-                
-                //suma = suma + datosConvertidos;
-                suma += datosConvertidos;
 
-                txtTotal2.Text = suma.ToString();
-
-            }
+            //dtgVentas.Refresh();
+            dtgVentas.ClearSelection();
+            int obtenerUltimaFila = dtgVentas.Rows.Count - 1;
+            dtgVentas.FirstDisplayedScrollingRowIndex = obtenerUltimaFila;
+            dtgVentas.Rows[obtenerUltimaFila].Selected = true;
         }
 
         private void txtCantidad_TextChanged(object sender, EventArgs e)
@@ -118,6 +113,21 @@ namespace ejercicioClase.Vista
                 txtCantidad.Select();
             }
         }
+        void calculartotalfinal()
+        {
+                 double suma = 0;
+            for (int i=0; i<dtgVentas.RowCount; i++)
+            {
+                string datosOperar = dtgVentas.Rows[i].Cells[4].Value.ToString();
+        double datosConvertidos = Convert.ToDouble(datosOperar);
+
+        //suma = suma + datosConvertidos;
+        suma += datosConvertidos;
+
+                txtTotal2.Text = suma.ToString();
+
+            }
+}
 
         private void btnGVenta_Click(object sender, EventArgs e)
         {
@@ -219,6 +229,14 @@ namespace ejercicioClase.Vista
             this.Hide();
         }
 
-       
+        private void dtgVentas_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            calculartotalfinal();
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            dtgVentas.Rows.Remove(dtgVentas.CurrentRow);
+        }
     }
 }
