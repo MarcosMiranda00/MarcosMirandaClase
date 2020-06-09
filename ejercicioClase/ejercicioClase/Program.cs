@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ejercicioClase.Vista;
+using ejercicioClase.ConsultasRpt;
+
 
 namespace ejercicioClase
 {
@@ -17,7 +19,7 @@ namespace ejercicioClase
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Logueo());
+            Application.Run(new frmrptProductos());
         }
     }
 }
